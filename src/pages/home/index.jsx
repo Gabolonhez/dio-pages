@@ -7,7 +7,7 @@ import { Container, TextContent, Title, TitleHighlight } from './styles';
  
 const Home = () => {
     return ( <>   
-     <Header>
+     <Header/>
         <Container>
             <div>
                 <Title>
@@ -19,18 +19,16 @@ const Home = () => {
                     o seu futuro global agora!
                 </Title>
                 <TextContent>
-                Domine as tecnologias utilizdas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
-
+                Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
                 </TextContent>
+                <Button title="Começar agora" variant="secondary" onClick={() => null} />
             </div>
             <div>
                 <img src="" alt="Main image"/>
             </div>
         </Container>
-     </Header>
-    
-</>
-)
+        </>
+    )
 }
 
 export { Home }
