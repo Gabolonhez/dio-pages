@@ -25,7 +25,7 @@ export const Title = styled.h2`
    color: #FFFFFF;
 `
 
-export const TitleHighligh = styled.span`
+export const TitleHighlight = styled.span`
    color: #E41050;
 
 `

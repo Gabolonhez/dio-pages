@@ -10,7 +10,18 @@ const Home = () => {
      <Header>
         <Container>
             <div>
+                <Title>
 
+                    <TitleHighlight>
+                        Implemente
+                        <br></br>
+                    </TitleHighlight>
+                    o seu futuro global agora!
+                </Title>
+                <TextContent>
+                Domine as tecnologias utilizdas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
+
+                </TextContent>
             </div>
             <div>
                 <img src="" alt="Main image"/>
