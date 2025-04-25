@@ -5,14 +5,16 @@ import {
 } from "react-router-dom";
 
 import { Home } from "./pages/home";
-import { Login } from "./pages/login"
+import { Login } from "./pages/login";
+import { Feed } from "./pages/feed";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home></Home>} />
-        <Route path="/login" element={<Login></Login>} />
+        <Route path="/home" element={<Home/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/feed" element={<Feed/>} />
       </Routes>
     </Router>
   );

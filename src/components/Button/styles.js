@@ -6,10 +6,11 @@ export const ButtonContainer = styled.button `
     position: relative;
 
     color: #FFF;
-    padding: 2px 12px;
+    padding: 5px 12px;
     min-width: 120px;
     width: 100%;
     cursor: pointer;
+   
     
 
     ${({variant})=> variant !== "primary" && css`
