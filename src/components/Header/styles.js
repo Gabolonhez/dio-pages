@@ -9,18 +9,22 @@ export const Container = styled.div `
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    
 `
 
 export const Row = styled.div `
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
+    
 `
 
 export const Column = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 `
 
 export const Wrapper = styled.div `
@@ -31,6 +35,7 @@ export const Wrapper = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
+
 `
 
 export const SearchInputContainer = styled.div `
@@ -49,22 +54,23 @@ export const SearchInputContainer = styled.div `
 export const Menu = styled.a `
     font-family: 'Open Sans';
     font-style: normal;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 25px;
     color: #FFFFFF;
     margin-right: 12px;
     text-decoration: none;
-
+    cursor: pointer;
 `
 
 export const MenuRight = styled.a `
     font-family: 'Open Sans';
     font-style: normal;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 25px;
     color: #FFFFFF;
     margin-right: 12px;
     text-decoration: none;
+    cursor: pointer;
 `
 
 export const UserPicture = styled.img `
@@ -80,4 +86,6 @@ export const Input = styled.input `
     flex: 1;
     border: 0;
     color: #FFFFFF;
+    outline: none;
+    text-align: center;
 `

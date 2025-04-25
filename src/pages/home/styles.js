@@ -10,6 +10,7 @@ export const Container = styled.main`
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+   
 `
 
 export const Title = styled.h2`
@@ -23,15 +24,16 @@ export const Title = styled.h2`
    line-height: 44px;
 
    color: #FFFFFF;
+   
 `
 
 export const TitleHighlight = styled.span`
    color: #E41050;
-
+   
 `
 
 export const TextContent = styled.p`
-   font-family: 'Open-sans';
+   font-family: 'Open Sans';
    font-style: normal;
    font-weight: 400;
    font-size: 16px;

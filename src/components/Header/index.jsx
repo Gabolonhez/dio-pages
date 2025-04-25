@@ -1,5 +1,8 @@
 import React from "react";
 import { Button } from "../Button";
+import { useNavigate } from "react-router-dom";
+import Logo from '../../images/logo-dio.png';
+import Me from "../../images/Me.png";
 
 import {
     SearchInputContainer,
@@ -13,22 +16,37 @@ import {
     Wrapper
 } from "./styles";
 
-const Header = () => {
+const Header = ({authenticated}) => {
+    const navigate = useNavigate();
+
+    const handleClickLogin = () => {
+        navigate("../login");
+    }
     return (
         <Wrapper>
             <Container>
                 <Row> 
-                    <img alt="Logo DIO"></img>
+                    <img src={Logo} alt="Logo DIO"></img>
+                    {authenticated? (
+                    <>
                     <SearchInputContainer>
                         <Input placeholder="Buscar..."></Input>
                     </SearchInputContainer>
                     <Menu>Live Code</Menu>
                     <Menu>Global</Menu>
-                </Row>
-                <Row> 
+                    </>
+                ): null }
+                </Row> 
+                <Row>
+                {authenticated ? (
+                    <UserPicture src={Me} />
+                ) : (
+                    <>
                     <MenuRight href="#">Home</MenuRight>
-                    <Button title="Entrar"></Button>
-                    <Button title="Cadastrar"></Button>
+                    <Button title="Entrar" onClick={handleClickLogin} type="Button"></Button>
+                    <Button title="Cadastrar" onClick={handleClickLogin} type="Button"></Button>
+                    </>
+                )}
                 </Row>
             </Container>
         </Wrapper>
