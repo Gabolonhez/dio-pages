@@ -1,3 +1,20 @@
+# DIO Pages Clone
+![image](https://github.com/user-attachments/assets/7e16385d-86db-40ad-b1c1-fa7a0d091aa3)
+
+
+## 📑 Descrição
+Clone das páginas de home, login e feed da DIO.
+
+## 🎯 Funcionalidades
+- [x] : Permite realizar a navegação entre as páginas.
+
+## 💻 Tecnologias
+- `React`
+- `HTML`
+- `CSS`
+- `Javascript`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
