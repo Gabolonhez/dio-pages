@@ -11,10 +11,10 @@ Clone das páginas de home, login e feed da DIO.
 
 ## 💻 Tecnologias
 - `React`
+- `Javascript`
+- `API`
 - `HTML`
 - `CSS`
-- `Javascript`
-
 
 # Getting Started with Create React App
 
