@@ -6,7 +6,8 @@
 Clone das páginas de home, login e feed da DIO.
 
 ## 🎯 Funcionalidades
-- [x] : Permite realizar a navegação entre as páginas.
+- [X] : Permite realizar a navegação entre as páginas.
+- [X] : Validação do formulário de login, do e-mail e da senha.
 
 ## 💻 Tecnologias
 - `React`
