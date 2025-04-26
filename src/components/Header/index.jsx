@@ -19,9 +19,19 @@ import {
 const Header = ({authenticated}) => {
     const navigate = useNavigate();
 
+    const handleClickHome = () => {
+        navigate("../");
+    }
+
     const handleClickLogin = () => {
         navigate("../login");
     }
+
+    const handleClickRegister = () => {
+        navigate("../register");
+    }
+
+
     return (
         <Wrapper>
             <Container>
@@ -38,15 +48,9 @@ const Header = ({authenticated}) => {
                 ): null }
                 </Row> 
                 <Row>
-                {authenticated ? (
-                    <UserPicture src={Me} />
-                ) : (
-                    <>
-                    <MenuRight href="#">Home</MenuRight>
+                    <MenuRight onClick={handleClickHome}>Home</MenuRight>
                     <Button title="Entrar" onClick={handleClickLogin} type="Button"></Button>
-                    <Button title="Cadastrar" onClick={handleClickLogin} type="Button"></Button>
-                    </>
-                )}
+                    <Button title="Cadastrar" onClick={handleClickRegister} type="Button"></Button>
                 </Row>
             </Container>
         </Wrapper>
