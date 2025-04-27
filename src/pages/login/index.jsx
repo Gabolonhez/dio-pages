@@ -14,8 +14,6 @@ import { Input } from "../../components/Input";
 
 import { Container, Title, TitleLogin, SubtitleLogin, ForgetText, CreateText, Wrapper, Column, Row} from './styles';
  
-
-
 const schema = yup.object({
     email: yup.string().email("E-mail inválido").required("E-mail obrigatório"),
     password: yup.string().min(8, 'No mínimo 8 caracteres').required("Senha obrigatória"),

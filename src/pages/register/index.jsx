@@ -15,8 +15,6 @@ import { Input } from "../../components/Input";
 
 import { Container, Title, TitleLogin, SubtitleLogin, LoginText, TermsText, Wrapper, Column, Row, TextHighlight} from './styles';
  
-
-
 const schema = yup.object({
     name: yup.string().min(10, 'No mínimo 10 caracteres').required("Nome obrigatório"),
     email: yup.string().email("E-mail inválido").required("E-mail obrigatório"),
@@ -54,7 +52,7 @@ const Register = () => {
                     <TitleLogin>Cadastre-se</TitleLogin>
                     <SubtitleLogin>Crie sua conta e make the change.</SubtitleLogin>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <Input name="name" control={control} placeholder="Nome" type="text" leftIcon={<FaRegUser/>}/>
+                        <Input name="name" errorMessage={errors?.name?.message} control={control} placeholder="Nome" type="text" leftIcon={<FaRegUser/>}/>
                         <Input name="email"  errorMessage={errors?.email?.message} control={control} placeholder="E-mail" type="email" leftIcon={<MdEmail/>}/>
                         <Input name="password"  errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock/>}/>
                         <Button title="Criar conta" variant="secondary"  type="submit"></Button>
