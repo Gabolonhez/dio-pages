@@ -8,6 +8,7 @@ Clone das páginas de home, login e feed da DIO.
 ## 🎯 Funcionalidades
 - [X] : Permite realizar a navegação entre as páginas.
 - [X] : Validação do formulário de login, do e-mail e da senha.
+- [X] : Criação de conta, armazenamento e possbilidade de login via API. 
 
 ## 💻 Tecnologias
 - `React`
@@ -15,6 +16,7 @@ Clone das páginas de home, login e feed da DIO.
 - `API`
 - `HTML`
 - `CSS`
+- `JSON`
 
 # Getting Started with Create React App
 
