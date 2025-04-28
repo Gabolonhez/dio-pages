@@ -36,6 +36,10 @@ You may also see any lint errors in the console.
 
 Runs the api.
 
+### ` json-server --watch db.json --port 3001`
+
+Runs json-server on port 3001
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
