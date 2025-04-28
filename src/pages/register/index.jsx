@@ -15,6 +15,13 @@ import { Input } from "../../components/Input";
 
 import { Container, Title, TitleLogin, SubtitleLogin, LoginText, TermsText, Wrapper, Column, Row, TextHighlight} from './styles';
  
+
+type FormData = {
+    name: string;
+    email: string;
+    password: string;
+};
+
 const schema = yup.object({
     name: yup.string().min(10, 'No mínimo 10 caracteres').required("Nome obrigatório"),
     email: yup.string().email("E-mail inválido").required("E-mail obrigatório"),
@@ -35,9 +42,38 @@ const Register = () => {
 
     });
 
-    const onSubmit = async formData => { 
+    const onSubmit: SubmitHandler<FormData> = async (formData) => {
+        try {
+            
+            const response = await api.post('/users', formData);
 
-    }
+            alert("Conta criada com sucesso!");
+            console.log("Conta criada com sucesso:", response.data);
+
+            
+            navigate('../login');
+
+        } catch (error) { 
+            console.error("Registration failed", error);
+
+            if (error.response) {
+             
+                console.error("Error data:", error.response.data);
+                console.error("Error status:", error.response.status);
+                console.error("Error headers:", error.response.headers);
+               
+                alert(`Erro ao criar usuário: ${error.response.data?.message || error.message || 'Detalhes desconhecidos.'}`);
+            } else if (error.request) {
+           
+                console.error("Error request:", error.request);
+                alert('Erro de rede: Nenhuma resposta recebida do servidor.');
+            } else {
+            
+                console.error('Error message:', error.message);
+                alert(`Erro inesperado: ${error.message}`);
+            }
+        }
+    };
 
     return ( <>   
      <Header/>
@@ -55,7 +91,7 @@ const Register = () => {
                         <Input name="name" errorMessage={errors?.name?.message} control={control} placeholder="Nome" type="text" leftIcon={<FaRegUser/>}/>
                         <Input name="email"  errorMessage={errors?.email?.message} control={control} placeholder="E-mail" type="email" leftIcon={<MdEmail/>}/>
                         <Input name="password"  errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock/>}/>
-                        <Button title="Criar conta" variant="secondary"  type="submit"></Button>
+                        <Button title="Criar conta" variant="secondary"  type="submit" disabled={isLoading || isSubmitted}></Button>
                     </form>
                     <Row>
                         <LoginText onClick={handleClickLogin}>Já tem uma conta? <TextHighlight>Fazer login</TextHighlight></LoginText>
