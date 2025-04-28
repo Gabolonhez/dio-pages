@@ -3,7 +3,7 @@
 
 
 ## 📑 Descrição
-Clone das páginas de home, login e feed da DIO.
+Clone das páginas de home, login, cadastro e feed da DIO.
 
 ## 🎯 Funcionalidades
 - [X] : Permite realizar a navegação entre as páginas.
