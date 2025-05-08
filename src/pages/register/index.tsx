@@ -14,7 +14,8 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 
 import { Container, Title, TitleLogin, SubtitleLogin, LoginText, TermsText, Wrapper, Column, Row, TextHighlight} from './styles';
- 
+
+import { IRegisterData } from './types';
 
 type FormData = {
     name: string;
@@ -36,13 +37,13 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState:  {errors, isValid, isSubmitted, isLoading} } = useForm({
+    const { control, handleSubmit, formState:  {errors, isValid, isSubmitted, isLoading} } = useForm<IRegisterData>({
         resolver: yupResolver(schema),
         mode: 'onChange',
 
     });
 
-    const onSubmit: SubmitHandler<FormData> = async (formData) => {
+    const onSubmit: SubmitHandler<FormData> = async (formData: IRegisterData) => {
         try {
             
             const response = await api.post('/users', formData);
