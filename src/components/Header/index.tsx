@@ -3,6 +3,7 @@ import { Button } from "../Button";
 import { useNavigate } from "react-router-dom";
 import Logo from '../../images/logo-dio.png';
 import Me from "../../images/Me.png";
+import { IHeader } from "./types";
 
 import {
     SearchInputContainer,
@@ -16,7 +17,7 @@ import {
     Wrapper
 } from "./styles";
 
-const Header = ({authenticated}) => {
+const Header = ({authenticated}: IHeader) => {
     const navigate = useNavigate();
 
     const handleClickHome = () => {
