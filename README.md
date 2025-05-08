@@ -42,6 +42,10 @@ Runs the api.
 
 Runs json-server on port 3001
 
+### `npx tsc --init`
+
+Runs typescript
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
