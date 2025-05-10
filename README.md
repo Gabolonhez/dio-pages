@@ -13,6 +13,7 @@ Clone das páginas de home, login, cadastro e feed da DIO.
 ## 💻 Tecnologias
 - `React`
 - `Javascript`
+- `Typescript`
 - `API`
 - `HTML`
 - `CSS`
