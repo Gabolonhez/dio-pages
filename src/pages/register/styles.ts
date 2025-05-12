@@ -88,10 +88,10 @@ export const TermsText = styled.p`
    font-family: 'Open sans';
    font-style: normal;
    font-weight: 400;
-   font-size: 18px;
+   font-size: 14px;
    line-height: 19px;
    width: 500px;
-    text-align: left;
+   text-align: left;
 
 
    color:#FFFFFF;

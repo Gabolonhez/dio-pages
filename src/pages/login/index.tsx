@@ -26,7 +26,6 @@ const Login = () => {
         navigate("../register");
     }
 
-    const navigate = useNavigate();
 
     const { control, handleSubmit, formState:  {errors, isValid, isSubmitted, isLoading} } = useForm<IFormData>({
         resolver: yupResolver(schema),
@@ -35,7 +34,6 @@ const Login = () => {
     });
 
     const onSubmit = async (formData: IFormData) => { 
-
         try {
             const {data} = await api.get(`users?email${formData.email}&password=${formData.password}`)
             if(data.length === 1) {
