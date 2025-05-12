@@ -3,9 +3,8 @@ import { Button } from "../Button";
 import { useNavigate } from "react-router-dom";
 import Logo from '../../images/logo-dio.png';
 import Me from '../../images/Me.png';
-import { AuthContext } from "../../context/auth";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 import {
     SearchInputContainer,
@@ -22,20 +21,17 @@ import {
 const Header = () => {
 
     const navigate = useNavigate();
-
     const handleClickHome = () => {
         navigate("../");
     }
-
     const handleClickLogin = () => {
         navigate("../login");
     }
-
     const handleClickRegister = () => {
         navigate("../register");
     }
 
-    const { user, handleSignOut } = useContext(AuthContext);
+    const { user, handleSignOut } = useAuth();
 
     return (
         <Wrapper>

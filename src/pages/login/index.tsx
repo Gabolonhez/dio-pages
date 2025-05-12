@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdEmail, MdLock } from 'react-icons/md'; 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useContext } from 'react';
-import { AuthContext } from '../../context/auth';
+import { useAuth } from '../../hooks/useAuth';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
@@ -20,7 +19,7 @@ const schema = yup.object({
 
 const Login = () => {
 
-    const { handleLogin} = useContext(AuthContext);
+    const { handleLogin} = useAuth();
 
     const handleClickRegister = () => {
         navigate("../register");
