@@ -3,17 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { MdEmail, MdLock } from 'react-icons/md'; 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth';
 import { useForm, SubmitHandler } from "react-hook-form";
-
-import { api } from "../../services/api";
-
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-
 import { Container, Title, TitleLogin, SubtitleLogin, ForgetText, CreateText, Wrapper, Column, Row} from './styles';
 import { IFormData } from './types';
+
  
 const schema = yup.object({
     email: yup.string().email("E-mail inválido").required("E-mail obrigatório"),
@@ -22,10 +20,13 @@ const schema = yup.object({
 
 const Login = () => {
 
+    const { handleLogin} = useContext(AuthContext);
+
     const handleClickRegister = () => {
         navigate("../register");
     }
 
+    const navigate = useNavigate();
 
     const { control, handleSubmit, formState:  {errors, isValid, isSubmitted, isLoading} } = useForm<IFormData>({
         resolver: yupResolver(schema),
@@ -34,16 +35,7 @@ const Login = () => {
     });
 
     const onSubmit = async (formData: IFormData) => { 
-        try {
-            const {data} = await api.get(`users?email${formData.email}&password=${formData.password}`)
-            if(data.length === 1) {
-                navigate("../feed"); 
-            } else {
-                alert("E-mail ou senha inválidos.");
-            }
-        } catch (error) {
-            alert("Houve um erro, tente novamente.");
-        }
+       handleLogin(formData);
     }
 
     return ( <>   

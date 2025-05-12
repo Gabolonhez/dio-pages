@@ -4,15 +4,17 @@ import { Card } from '../../components/Card';
 import { UserInfo } from '../../components/UserInfo';
 import { Container, Title, TitleHighlight, Column} from './styles';
 
+
 import Me from "../../images/Me.png";
 
  
 const Feed = () => {
+
     return ( <>   
-        <Header authenticated={true}/>
+        <Header/>
             <Container>
                 <Column flex={3}>
-                <Title>Feed</Title>
+                <Title>Feed</Title> 
                 <Card></Card>
                 <Card></Card>
                 <Card></Card>
